@@ -112,13 +112,14 @@
                             <i class="fa-solid fa-circle-xmark"></i>
                         </button>
                         <div class="pr-3.5 pl-1 text-[#78726D]">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Actions: Wishlist & Sell Button -->
+                <!-- Right Actions: Tips Aman, Wishlist & Sell Button -->
                 <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+                    <!-- Safety Guide Button -->
+                    <button onclick="openSafetyModal('pembeli')" class="p-2.5 sm:px-3.5 sm:py-2.5 rounded-xl bg-[#ADA69C]/30 hover:bg-[#ADA69C]/50 border border-[#ADA69C]/50 text-white transition-colors flex items-center gap-2 cursor-pointer" title="Panduan Transaksi Aman">
+                        <i class="fa-solid fa-shield-halved text-base text-[#FF8500]"></i>
+                        <span class="hidden lg:inline text-sm font-semibold">Tips Aman</span>
+                    </button>
+
                     <!-- Wishlist Button -->
                     <button onclick="openWishlistModal()" class="relative p-2.5 sm:px-3.5 sm:py-2.5 rounded-xl bg-[#ADA69C]/30 hover:bg-[#ADA69C]/50 border border-[#ADA69C]/50 text-white transition-colors flex items-center gap-2 cursor-pointer" title="Barang Favorit">
                         <i class="fa-solid fa-heart text-base text-[#FF8500]"></i>
@@ -185,11 +186,42 @@
                         <i class="fa-solid fa-camera"></i>
                         <span>Pasang Iklan Gratis</span>
                     </button>
-                    <a href="#katalog-section" class="flex-1 md:flex-initial bg-[#ADA69C]/30 hover:bg-[#ADA69C]/45 text-white font-semibold text-sm px-5 py-3.5 rounded-xl border border-[#ADA69C] transition-all flex items-center justify-center gap-2">
-                        <span>Jelajahi Barang</span>
-                        <i class="fa-solid fa-arrow-down text-xs"></i>
-                    </a>
+                    <button onclick="openSafetyModal('rekber')" class="flex-1 md:flex-initial bg-[#ADA69C]/30 hover:bg-[#ADA69C]/45 text-white font-semibold text-sm px-5 py-3.5 rounded-xl border border-[#ADA69C] transition-all flex items-center justify-center gap-2 cursor-pointer">
+                        <i class="fa-solid fa-shield-check text-[#FF8500]"></i>
+                        <span>Cara Kerja Rekber</span>
+                    </button>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SAFETY QUICK ACCESS BANNER ==================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+        <div class="bg-white/95 border border-[#ADA69C] rounded-2xl p-4 sm:px-6 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div class="flex items-start sm:items-center gap-3.5">
+                <div class="w-11 h-11 rounded-xl bg-[#FF8500]/15 border border-[#FF8500]/40 text-[#FF5700] flex items-center justify-center shrink-0 text-xl">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <h2 class="font-display font-bold text-sm sm:text-base text-[#2F2C2A]">Pusat Keamanan & Rekber Barkas</h2>
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider bg-[#FF5700] text-white px-2 py-0.5 rounded-full">100% Proteksi</span>
+                    </div>
+                    <p class="text-xs text-[#78726D] mt-0.5 leading-relaxed">
+                        Gunakan <strong class="text-[#2F2C2A]">Rekber Barkas</strong> atau ikuti panduan cek fisik COD sebelum bertransaksi barang elektronik & kendaraan.
+                    </p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 w-full md:w-auto shrink-0">
+                <button onclick="openSafetyModal('pembeli')" class="flex-1 md:flex-initial bg-[#D6D3CE] hover:bg-[#ADA69C] text-[#2F2C2A] font-bold text-xs px-3.5 py-2.5 rounded-xl transition-colors cursor-pointer">
+                    <i class="fa-solid fa-bag-shopping text-[#FF5700] mr-1.5"></i>Tips Pembeli
+                </button>
+                <button onclick="openSafetyModal('penjual')" class="flex-1 md:flex-initial bg-[#D6D3CE] hover:bg-[#ADA69C] text-[#2F2C2A] font-bold text-xs px-3.5 py-2.5 rounded-xl transition-colors cursor-pointer">
+                    <i class="fa-solid fa-store text-[#FF8500] mr-1.5"></i>Tips Penjual
+                </button>
+                <button onclick="openSafetyModal('rekber')" class="flex-1 md:flex-initial bg-[#78726D] hover:bg-[#FF5700] text-white font-bold text-xs px-3.5 py-2.5 rounded-xl transition-colors cursor-pointer">
+                    Info Rekber
+                </button>
             </div>
         </div>
     </section>
@@ -285,7 +317,12 @@
                     <ul class="space-y-2 text-xs text-[#D6D3CE] leading-relaxed">
                         <li><i class="fa-solid fa-shield-halved text-[#FF8500] mr-1.5"></i>Utamakan COD di tempat ramai & aman</li>
                         <li><i class="fa-solid fa-check-circle text-[#FF8500] mr-1.5"></i>Cek fisik & kelengkapan barang</li>
-                        <li><i class="fa-solid fa-comments text-[#FF8500] mr-1.5"></i>Gunakan fitur Nego sebelum membeli</li>
+                        <li><i class="fa-solid fa-comments text-[#FF8500] mr-1.5"></i>Gunakan fitur Nego & Rekber Barkas</li>
+                        <li class="pt-1">
+                            <button onclick="openSafetyModal('pembeli')" class="text-[#FF8500] hover:underline font-bold cursor-pointer">
+                                Baca Panduan Keamanan Lengkap &rarr;
+                            </button>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -307,6 +344,10 @@
                     <span id="detailTimeBadge" class="text-[#2F2C2A]">Baru saja</span>
                 </div>
                 <div class="flex items-center gap-2">
+                    <button onclick="openReportModal()" class="px-2.5 py-1.5 rounded-xl bg-white/80 hover:bg-[#FF5700] hover:text-white text-[#78726D] text-xs font-bold transition-colors flex items-center gap-1.5 cursor-pointer" title="Laporkan Iklan Mencurigakan">
+                        <i class="fa-solid fa-flag"></i>
+                        <span class="hidden sm:inline">Laporkan</span>
+                    </button>
                     <button id="detailWishlistBtn" onclick="toggleWishlistFromDetail()" class="p-2 rounded-xl bg-white/80 hover:bg-white text-[#78726D] transition-colors cursor-pointer" title="Simpan ke Favorit">
                         <i class="fa-regular fa-heart text-lg"></i>
                     </button>
@@ -328,10 +369,15 @@
                     </div>
                     <!-- Seller Card -->
                     <div class="p-4 sm:p-5 bg-white border-t border-[#ADA69C]/50">
-                        <p class="text-[11px] font-bold uppercase tracking-wider text-[#78726D] mb-2">Informasi Penjual</p>
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="text-[11px] font-bold uppercase tracking-wider text-[#78726D]">Informasi Penjual</p>
+                            <span class="inline-flex items-center gap-1 text-[10px] font-extrabold text-[#FF5700] bg-[#FF8500]/15 px-2 py-0.5 rounded-full border border-[#FF8500]/40">
+                                <i class="fa-solid fa-shield-check"></i> Penjual Terverifikasi KTP & HP
+                            </span>
+                        </div>
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-3">
-                                <div id="detailSellerAvatar" class="w-11 h-11 rounded-full bg-[#78726D] text-white font-display font-bold flex items-center justify-center text-base">
+                                <div id="detailSellerAvatar" class="w-11 h-11 rounded-full bg-[#78726D] text-white font-display font-bold flex items-center justify-center text-base relative">
                                     AR
                                 </div>
                                 <div>
@@ -344,9 +390,9 @@
                                     </p>
                                 </div>
                             </div>
-                            <span class="text-xs font-bold text-[#FF5700] bg-[#FF8500]/15 px-2.5 py-1 rounded-lg border border-[#FF8500]/40">
-                                Aktif
-                            </span>
+                            <button onclick="openSafetyModal('pembeli')" class="text-[11px] font-bold text-[#78726D] hover:text-[#FF5700] underline cursor-pointer">
+                                Tips COD Aman
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -395,7 +441,14 @@
                         </div>
 
                         <!-- TAB 2: Real-time Interactive Chat & Nego -->
-                        <div id="detailChatPane" class="hidden mt-4 flex flex-col h-64 bg-[#D6D3CE]/45 rounded-2xl border border-[#ADA69C] overflow-hidden">
+                        <div id="detailChatPane" class="hidden mt-4 flex flex-col h-72 bg-[#D6D3CE]/45 rounded-2xl border border-[#ADA69C] overflow-hidden">
+                            <!-- Automatic Anti-Fraud Security Warning Banner -->
+                            <div class="bg-[#78726D] text-white px-3 py-2 text-[11px] flex items-start gap-2 border-b border-[#ADA69C]/50 shrink-0">
+                                <i class="fa-solid fa-shield-halved text-[#FF8500] mt-0.5 shrink-0"></i>
+                                <p class="leading-snug">
+                                    <strong class="text-[#FF8500]">Peringatan Keamanan:</strong> Jangan transfer langsung ke rekening pribadi di luar sistem <strong>Rekber Barkas</strong> & jangan pernah membagikan kode <strong>OTP/PIN</strong>!
+                                </p>
+                            </div>
                             <!-- Chat Messages Area -->
                             <div id="chatMessagesBox" class="flex-1 p-3.5 overflow-y-auto space-y-2.5 text-xs">
                                 <!-- Chat bubbles injected dynamically -->
@@ -507,12 +560,16 @@
 
                 <!-- Payment Method -->
                 <div>
-                    <label class="block text-xs font-bold text-[#2F2C2A] mb-1">Metode Pembayaran</label>
+                    <label class="block text-xs font-bold text-[#2F2C2A] mb-1">Metode Pembayaran (Dilindungi Sistem)</label>
                     <select id="paymentMethod" class="w-full bg-[#D6D3CE]/45 border border-[#ADA69C] rounded-xl px-3.5 py-2.5 text-sm font-semibold text-[#2F2C2A] focus:outline-none focus:border-[#FF8500]">
-                        <option value="Tunai saat COD">Tunai saat COD (Bayar di Tempat)</option>
-                        <option value="Transfer Bank / Virtual Account">Transfer Bank / Virtual Account (Rekber Barkas)</option>
-                        <option value="QRIS / E-Wallet (GoPay, OVO, DANA)">QRIS / E-Wallet (GoPay, OVO, DANA)</option>
+                        <option value="Rekber Barkas (Escrow Aman - Dana Ditahan Hingga Barang Diterima)">⭐ Rekber Barkas (Escrow Aman - Dana Ditahan Hingga Barang Diterima)</option>
+                        <option value="Tunai saat COD (Bayar Setelah Cek Fisik Barang)">Tunai saat COD (Bayar Setelah Cek Fisik Barang)</option>
+                        <option value="QRIS / Virtual Account via Rekber Barkas">QRIS / Virtual Account via Rekber Barkas</option>
                     </select>
+                    <p class="text-[11px] text-[#78726D] mt-1.5 flex items-center gap-1.5">
+                        <i class="fa-solid fa-lock text-[#FF5700]"></i>
+                        <span>Dana Anda aman di rekening bersama & baru diteruskan ke penjual setelah barang dikonfirmasi sesuai.</span>
+                    </p>
                 </div>
 
                 <!-- Submit -->
@@ -635,6 +692,16 @@
                     <textarea id="sellDescription" rows="3" required placeholder="Jelaskan kelengkapan, minus (jika ada), alasan dijual, dan lokasi COD..." class="w-full bg-[#D6D3CE]/45 border border-[#ADA69C] rounded-xl px-4 py-2.5 text-sm text-[#2F2C2A] focus:outline-none focus:border-[#FF8500] focus:bg-white"></textarea>
                 </div>
 
+                <!-- Security & Authenticity Confirmation Checkbox -->
+                <div class="p-3.5 rounded-2xl bg-[#D6D3CE]/55 border border-[#ADA69C]">
+                    <label class="flex items-start gap-2.5 cursor-pointer">
+                        <input type="checkbox" id="sellSafetyConfirm" required class="mt-0.5 w-4 h-4 accent-[#FF5700] rounded cursor-pointer shrink-0">
+                        <span class="text-xs text-[#2F2C2A] leading-relaxed">
+                            Saya menyatakan bahwa <strong>foto yang diunggah adalah foto asli barang</strong>, deskripsi sesuai kondisi sebenarnya, dan barang ini <strong>bukan barang curian, ilegal, maupun melanggar hukum</strong>.
+                        </span>
+                    </label>
+                </div>
+
                 <!-- Submit Actions -->
                 <div class="pt-2 flex items-center justify-end gap-3 border-t border-[#ADA69C]/50">
                     <button type="button" onclick="closeModal('sellModal')" class="px-5 py-2.5 rounded-xl bg-[#D6D3CE] hover:bg-[#ADA69C] text-[#2F2C2A] font-bold text-sm transition-colors cursor-pointer">
@@ -663,6 +730,221 @@
             <div id="wishlistItemsContainer" class="p-5 max-h-[65vh] overflow-y-auto space-y-3">
                 <!-- Wishlist items injected via JS -->
             </div>
+        </div>
+    </div>
+
+    <!-- ==================== MODAL 5: PANDUAN TRANSAKSI AMAN & REKBER ==================== -->
+    <div id="safetyModal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-[#2F2C2A]/75 backdrop-blur-sm p-3 sm:p-6 flex items-center justify-center">
+        <div class="bg-white w-full max-w-3xl rounded-3xl shadow-2xl overflow-hidden animate-slide-up my-auto border border-[#ADA69C]">
+            <!-- Header -->
+            <div class="flex items-center justify-between px-6 py-4 bg-[#78726D] text-white border-b border-[#ADA69C]/50">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-[#FF8500] text-white flex items-center justify-center text-lg shadow-sm">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-display font-extrabold text-lg sm:text-xl">Panduan Transaksi Aman Barkas</h3>
+                        <p class="text-xs text-[#D6D3CE]">Lindungi diri Anda dari penipuan saat jual beli barang bekas</p>
+                    </div>
+                </div>
+                <button onclick="closeModal('safetyModal')" class="w-9 h-9 rounded-xl bg-white/15 hover:bg-[#FF5700] text-white flex items-center justify-center cursor-pointer">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Tabs Navigation -->
+            <div class="px-6 pt-4 bg-[#D6D3CE]/60 border-b border-[#ADA69C]/60">
+                <div class="grid grid-cols-3 gap-2 pb-4">
+                    <button id="safetyTabPembeli" onclick="switchSafetyTab('pembeli')" class="py-2.5 px-3 rounded-xl font-display font-bold text-xs sm:text-sm transition-all cursor-pointer bg-[#FF8500] text-white shadow-sm">
+                        <i class="fa-solid fa-bag-shopping mr-1.5"></i>Panduan Pembeli
+                    </button>
+                    <button id="safetyTabPenjual" onclick="switchSafetyTab('penjual')" class="py-2.5 px-3 rounded-xl font-display font-bold text-xs sm:text-sm transition-all cursor-pointer bg-white text-[#2F2C2A] border border-[#ADA69C] hover:border-[#FF8500]">
+                        <i class="fa-solid fa-store mr-1.5 text-[#FF8500]"></i>Panduan Penjual
+                    </button>
+                    <button id="safetyTabRekber" onclick="switchSafetyTab('rekber')" class="py-2.5 px-3 rounded-xl font-display font-bold text-xs sm:text-sm transition-all cursor-pointer bg-white text-[#2F2C2A] border border-[#ADA69C] hover:border-[#FF8500]">
+                        <i class="fa-solid fa-handshake-angle mr-1.5 text-[#FF5700]"></i>Rekber Barkas
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Content Area -->
+            <div class="p-6 max-h-[68vh] overflow-y-auto space-y-4">
+                <!-- PANE 1: PANDUAN PEMBELI -->
+                <div id="safetyPanePembeli" class="space-y-3.5">
+                    <div class="p-4 rounded-2xl bg-[#D6D3CE]/45 border border-[#ADA69C]">
+                        <h4 class="font-display font-bold text-sm text-[#2F2C2A] flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-lg bg-[#FF8500] text-white text-xs flex items-center justify-center font-extrabold">1</span>
+                            Utamakan COD di Tempat Ramai & Terpantau CCTV
+                        </h4>
+                        <p class="text-xs text-[#2F2C2A]/85 mt-1.5 leading-relaxed">
+                            Lakukan pertemuan di tempat umum yang ramai seperti minimarket, kafe, pusat perbelanjaan, atau area parkir kantor polisi/bank. Hindari lokasi sepi atau malam hari untuk transaksi bernilai besar.
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-[#D6D3CE]/45 border border-[#ADA69C]">
+                        <h4 class="font-display font-bold text-sm text-[#2F2C2A] flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-lg bg-[#FF8500] text-white text-xs flex items-center justify-center font-extrabold">2</span>
+                            Cek IMEI, Layar & Akun iCloud/Google (Handphone & Laptop)
+                        </h4>
+                        <p class="text-xs text-[#2F2C2A]/85 mt-1.5 leading-relaxed">
+                            Periksa nomor IMEI melalui situs resmi Kemenperin, pastikan fungsi layar sentuh, kamera, speaker, port charger, serta kesehatan baterai normal. Wajib pastikan akun <strong>iCloud / Google / Microsoft penjual sudah di-logout</strong> dan perangkat bisa di-reset pabrik.
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-[#D6D3CE]/45 border border-[#ADA69C]">
+                        <h4 class="font-display font-bold text-sm text-[#2F2C2A] flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-lg bg-[#FF8500] text-white text-xs flex items-center justify-center font-extrabold">3</span>
+                            Cocokkan Nomor Rangka, Mesin & Surat Asli (Motor & Mobil)
+                        </h4>
+                        <p class="text-xs text-[#2F2C2A]/85 mt-1.5 leading-relaxed">
+                            Cocokkan fisik nomor rangka dan nomor mesin pada kendaraan dengan yang tertera di <strong>STNK dan BPKB asli</strong>. Periksa juga status pajak tahunan dan cek blokir tilang elektronik (ETLE) sebelum melunasi pembayaran.
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-[#FF5700]/10 border border-[#FF5700]/40">
+                        <h4 class="font-display font-bold text-sm text-[#FF5700] flex items-center gap-2">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            Waspada Modus Penipuan Segitiga & Harga Terlalu Murah
+                        </h4>
+                        <p class="text-xs text-[#2F2C2A]/90 mt-1.5 leading-relaxed">
+                            Pastikan nama pemilik rekening tujuan transfer sama persis dengan nama penjual yang bertemu langsung saat COD. Jangan pernah mentransfer DP (Down Payment) sebelum melihat barang secara langsung atau tanpa melalui <strong>Rekber Barkas</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- PANE 2: PANDUAN PENJUAL -->
+                <div id="safetyPanePenjual" class="hidden space-y-3.5">
+                    <div class="p-4 rounded-2xl bg-[#D6D3CE]/45 border border-[#ADA69C]">
+                        <h4 class="font-display font-bold text-sm text-[#2F2C2A] flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-lg bg-[#FF5700] text-white text-xs flex items-center justify-center font-extrabold">1</span>
+                            Cek Mutasi M-Banking Secara Langsung (Jangan Percaya Screenshot)
+                        </h4>
+                        <p class="text-xs text-[#2F2C2A]/85 mt-1.5 leading-relaxed">
+                            Jangan pernah menyerahkan barang atau kunci kendaraan hanya berdasarkan bukti transfer berupa gambar/screenshot. Selalu buka aplikasi <strong>mobile banking</strong> Anda dan pastikan saldo benar-benar sudah masuk.
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-[#FF5700]/10 border border-[#FF5700]/40">
+                        <h4 class="font-display font-bold text-sm text-[#FF5700] flex items-center gap-2">
+                            <i class="fa-solid fa-link-slash"></i>
+                            Waspada Link Phishing & Modus E-Cash Palsu
+                        </h4>
+                        <p class="text-xs text-[#2F2C2A]/90 mt-1.5 leading-relaxed">
+                            Penipu sering mengaku dari luar kota dan mengirim tautan mencurigakan dengan dalih "pencairan dana" atau "konfirmasi pengiriman". Jangan pernah mengklik tautan luar dan <strong>jangan membagikan kode OTP atau PIN</strong> kepada siapa pun.
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-[#D6D3CE]/45 border border-[#ADA69C]">
+                        <h4 class="font-display font-bold text-sm text-[#2F2C2A] flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-lg bg-[#FF5700] text-white text-xs flex items-center justify-center font-extrabold">3</span>
+                            Wajib Packing Kayu, Asuransi & Video Proses Kemas
+                        </h4>
+                        <p class="text-xs text-[#2F2C2A]/85 mt-1.5 leading-relaxed">
+                            Untuk pengiriman barang elektronik ke luar kota, gunakan <em>bubble wrap</em> tebal, packing kayu, serta aktifkan asuransi ekspedisi. Rekam video tanpa jeda mulai dari kondisi barang menyala hingga paket tersegel resi sebagai bukti sah jika terjadi komplain.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- PANE 3: CARA KERJA REKBER BARKAS -->
+                <div id="safetyPaneRekber" class="hidden space-y-4">
+                    <div class="p-4 rounded-2xl bg-[#78726D] text-white">
+                        <h4 class="font-display font-bold text-base flex items-center gap-2">
+                            <i class="fa-solid fa-shield-check text-[#FF8500]"></i>
+                            Apa itu Rekber (Rekening Bersama) Barkas?
+                        </h4>
+                        <p class="text-xs text-[#D6D3CE] mt-1.5 leading-relaxed">
+                            Rekber Barkas adalah sistem penahanan dana sementara (Escrow) yang melindungi pembeli dan penjual saat bertransaksi jarak jauh maupun COD agar bebas dari risiko penipuan.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div class="p-3.5 rounded-2xl bg-[#D6D3CE]/45 border border-[#ADA69C]">
+                            <span class="text-[11px] font-extrabold text-[#FF5700] uppercase">Langkah 1</span>
+                            <h5 class="font-bold text-sm text-[#2F2C2A] mt-0.5">Pembeli Bayar ke Rekber</h5>
+                            <p class="text-xs text-[#78726D] mt-1">Pembeli memilih metode Rekber Barkas saat checkout. Dana disimpan aman di sistem Barkas.</p>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-[#D6D3CE]/45 border border-[#ADA69C]">
+                            <span class="text-[11px] font-extrabold text-[#FF5700] uppercase">Langkah 2</span>
+                            <h5 class="font-bold text-sm text-[#2F2C2A] mt-0.5">Penjual Kirim Barang</h5>
+                            <p class="text-xs text-[#78726D] mt-1">Penjual mendapat notifikasi dana terverifikasi dan mengirimkan barang disertai nomor resi valid.</p>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-[#D6D3CE]/45 border border-[#ADA69C]">
+                            <span class="text-[11px] font-extrabold text-[#FF5700] uppercase">Langkah 3</span>
+                            <h5 class="font-bold text-sm text-[#2F2C2A] mt-0.5">Pembeli Cek Barang</h5>
+                            <p class="text-xs text-[#78726D] mt-1">Pembeli menerima barang dan memiliki waktu 2x24 jam untuk memastikan kondisi sesuai iklan.</p>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-[#D6D3CE]/45 border border-[#ADA69C]">
+                            <span class="text-[11px] font-extrabold text-[#FF5700] uppercase">Langkah 4</span>
+                            <h5 class="font-bold text-sm text-[#2F2C2A] mt-0.5">Dana Cair ke Penjual</h5>
+                            <p class="text-xs text-[#78726D] mt-1">Setelah pembeli menekan konfirmasi selesai, dana langsung diteruskan ke rekening penjual.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Modal -->
+            <div class="px-6 py-3.5 bg-[#D6D3CE]/60 border-t border-[#ADA69C]/60 flex justify-end">
+                <button onclick="closeModal('safetyModal')" class="bg-[#FF8500] hover:bg-[#FF5700] text-white font-display font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl transition-colors cursor-pointer">
+                    Saya Mengerti
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== MODAL 6: LAPORKAN IKLAN MENCURIGAKAN ==================== -->
+    <div id="reportModal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-[#2F2C2A]/75 backdrop-blur-sm p-4 flex items-center justify-center">
+        <div class="bg-white w-full max-w-md rounded-3xl shadow-2xl overflow-hidden animate-slide-up border border-[#ADA69C]">
+            <div class="flex items-center justify-between px-6 py-4 bg-[#78726D] text-white border-b border-[#ADA69C]/50">
+                <h3 class="font-display font-extrabold text-base sm:text-lg flex items-center gap-2">
+                    <i class="fa-solid fa-flag text-[#FF8500]"></i> Laporkan Iklan Ini
+                </h3>
+                <button onclick="closeModal('reportModal')" class="w-8 h-8 rounded-xl bg-white/15 hover:bg-[#FF5700] text-white flex items-center justify-center cursor-pointer">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <form onsubmit="submitReport(event)" class="p-5 space-y-4">
+                <div class="p-3 rounded-xl bg-[#D6D3CE]/55 border border-[#ADA69C] text-xs">
+                    <span class="text-[#78726D] block">Iklan yang dilaporkan:</span>
+                    <strong id="reportProductTitle" class="text-[#2F2C2A] font-bold block mt-0.5 truncate">Nama Barang</strong>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-[#2F2C2A] mb-2">Pilih Alasan Pelaporan *</label>
+                    <div class="space-y-2 text-xs">
+                        <label class="flex items-center gap-2.5 p-2.5 rounded-xl border border-[#ADA69C] hover:border-[#FF8500] cursor-pointer">
+                            <input type="radio" name="reportReason" value="Indikasi penipuan / minta transfer DP di luar Rekber" required class="accent-[#FF5700]">
+                            <span class="font-semibold text-[#2F2C2A]">Indikasi penipuan / minta DP di luar Rekber</span>
+                        </label>
+                        <label class="flex items-center gap-2.5 p-2.5 rounded-xl border border-[#ADA69C] hover:border-[#FF8500] cursor-pointer">
+                            <input type="radio" name="reportReason" value="Harga tidak wajar / jauh di bawah pasaran" class="accent-[#FF5700]">
+                            <span class="font-semibold text-[#2F2C2A]">Harga tidak wajar / jauh di bawah pasaran</span>
+                        </label>
+                        <label class="flex items-center gap-2.5 p-2.5 rounded-xl border border-[#ADA69C] hover:border-[#FF8500] cursor-pointer">
+                            <input type="radio" name="reportReason" value="Barang curian, ilegal, atau dilarang" class="accent-[#FF5700]">
+                            <span class="font-semibold text-[#2F2C2A]">Barang curian, ilegal, atau dilarang</span>
+                        </label>
+                        <label class="flex items-center gap-2.5 p-2.5 rounded-xl border border-[#ADA69C] hover:border-[#FF8500] cursor-pointer">
+                            <input type="radio" name="reportReason" value="Foto palsu / tidak sesuai deskripsi" class="accent-[#FF5700]">
+                            <span class="font-semibold text-[#2F2C2A]">Foto palsu / tidak sesuai deskripsi</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="reportNotes" class="block text-xs font-bold text-[#2F2C2A] mb-1">Keterangan Tambahan (Opsional)</label>
+                    <textarea id="reportNotes" rows="2" placeholder="Tuliskan detail kronologi atau kecurigaan Anda..." class="w-full bg-[#D6D3CE]/45 border border-[#ADA69C] rounded-xl px-3.5 py-2 text-xs text-[#2F2C2A] focus:outline-none focus:border-[#FF8500] focus:bg-white"></textarea>
+                </div>
+
+                <div class="flex gap-2.5 pt-1">
+                    <button type="button" onclick="closeModal('reportModal')" class="flex-1 py-2.5 rounded-xl bg-[#D6D3CE] hover:bg-[#ADA69C] text-[#2F2C2A] font-bold text-xs cursor-pointer">
+                        Batal
+                    </button>
+                    <button type="submit" class="flex-1 py-2.5 rounded-xl bg-[#FF5700] hover:bg-[#e04d00] text-white font-display font-bold text-xs shadow-md cursor-pointer">
+                        Kirim Laporan
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -1086,6 +1368,11 @@
                                 <p class="font-display font-extrabold text-lg text-[#FF5700] mt-1.5">
                                     ${formatRupiah(item.price)}
                                 </p>
+                                <div class="mt-1.5 flex items-center gap-1 text-[11px] font-semibold text-[#78726D]">
+                                    <i class="fa-solid fa-circle-check text-[#FF8500]"></i>
+                                    <span class="truncate">${escapeHtml(item.seller)}</span>
+                                    <span class="text-[10px] bg-[#D6D3CE] text-[#2F2C2A] px-1.5 py-0.2 rounded font-bold shrink-0">Terverifikasi</span>
+                                </div>
                             </div>
 
                             <div class="mt-3 pt-3 border-t border-[#D6D3CE] flex items-center justify-between text-[11px] text-[#78726D]">
@@ -1240,7 +1527,17 @@
             const messages = chatHistories[selectedProduct.id] || [];
 
             box.innerHTML = messages.map(m => {
-                if (m.sender === 'buyer') {
+                if (m.sender === 'system_warning') {
+                    return `
+                        <div class="bg-[#FF5700]/15 border border-[#FF5700]/45 text-[#2F2C2A] rounded-xl p-2.5 flex items-start gap-2 shadow-xs">
+                            <i class="fa-solid fa-triangle-exclamation text-[#FF5700] text-sm mt-0.5 shrink-0"></i>
+                            <div class="leading-relaxed">
+                                <strong class="text-[#FF5700] block text-[11px]">Peringatan Keamanan Otomatis</strong>
+                                <span>${escapeHtml(m.text)}</span>
+                            </div>
+                        </div>
+                    `;
+                } else if (m.sender === 'buyer') {
                     return `
                         <div class="flex justify-end">
                             <div class="bg-[#FF8500] text-white rounded-2xl rounded-br-sm px-3.5 py-2 max-w-[82%] shadow-sm">
@@ -1295,29 +1592,45 @@
             const now = new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
 
             chatHistories[pid].push({ sender: 'buyer', text: buyerText, time: now });
+
+            // Automatic Sensitive Keyword Detection (Anti-Fraud)
+            const lowerText = buyerText.toLowerCase();
+            const sensitiveKeywords = ['transfer langsung', 'wa', 'whatsapp', 'link', 'http', 'dp dulu', 'rekening pribadi', 'otp', 'pin'];
+            const detectedKeyword = sensitiveKeywords.find(kw => lowerText.includes(kw));
+
+            if (detectedKeyword) {
+                chatHistories[pid].push({
+                    sender: 'system_warning',
+                    text: 'Terdeteksi ajakan komunikasi/transaksi di luar aplikasi atau tautan eksternal. Demi keamanan Anda, tetap gunakan chat & Rekber Barkas agar dana terlindungi dari penipuan.',
+                    time: now
+                });
+            }
+
             renderChatMessages();
 
             // Simulate realistic seller auto-reply after 700ms
             setTimeout(() => {
                 let reply = '';
-                if (offeredPrice) {
+                if (detectedKeyword) {
+                    reply = `Tenang kak, untuk keamanan bersama kita transaksi lewat Rekber Barkas atau COD langsung di ${selectedProduct.location} aja ya agar sama-sama nyaman 😊`;
+                } else if (offeredPrice) {
                     const minAcceptable = selectedProduct.price * 0.88;
                     if (offeredPrice >= selectedProduct.price) {
-                        reply = `Wah cocok banget kak! Harga ${formatRupiah(offeredPrice)} langsung deal. Silakan klik "Beli Sekarang" ya!`;
+                        reply = `Wah cocok banget kak! Harga ${formatRupiah(offeredPrice)} langsung deal. Silakan klik "Beli Sekarang" via Rekber Barkas ya!`;
                     } else if (offeredPrice >= minAcceptable) {
                         // Seller agrees to negotiated price and updates product price!
                         selectedProduct.price = offeredPrice;
                         saveProductsToLocalStorage();
                         renderProducts();
                         document.getElementById('detailPrice').textContent = formatRupiah(offeredPrice);
-                        reply = `Oke kak, deal ya di harga ${formatRupiah(offeredPrice)}! Harga iklan sudah saya sesuaikan, silakan langsung checkout atau atur COD di ${selectedProduct.location}.`;
+                        reply = `Oke kak, deal ya di harga ${formatRupiah(offeredPrice)}! Harga iklan sudah saya sesuaikan, silakan langsung checkout lewat Rekber Barkas atau atur COD di ${selectedProduct.location}.`;
                         showToast(`Nego berhasil! Harga diperbarui menjadi ${formatRupiah(offeredPrice)}`, 'success');
                     } else {
                         const counter = Math.round((selectedProduct.price * 0.93) / 1000) * 1000;
                         reply = `Waduh belum masuk kak kalau ${formatRupiah(offeredPrice)} 😅 Gimana kalau kita ketemu di tengah di harga ${formatRupiah(counter)}? Barang dijamin ${selectedProduct.condition}.`;
                     }
-                } else if (buyerText.toLowerCase().includes('ada') || buyerText.toLowerCase().includes('ready')) {
-                    reply = `Masih ready kak! Kondisi ${selectedProduct.condition}, siap COD di area ${selectedProduct.location} atau kirim kurir.`;
+                } else if (lowerText.includes('ada') || lowerText.includes('ready')) {
+                    reply = `Masih ready kak! Kondisi ${selectedProduct.condition}, siap COD di area ${selectedProduct.location} atau kirim via Rekber Barkas.`;
                 } else {
                     reply = `Siap kak, barang terawat sesuai deskripsi. Kalau mau tawar harga langsung ketik nominalnya aja ya!`;
                 }
@@ -1393,45 +1706,45 @@
 
             const title = document.getElementById('sellTitle').value.trim();
             const category = document.getElementById('sellCategory').value;
-            const condition = document.getElementById('sellCondition').value;
-            const price = parseInt(document.getElementById('sellPrice').value, 10);
-            const location = document.getElementById('sellLocation').value;
-            const seller = document.getElementById('sellSellerName').value.trim();
-            const description = document.getElementById('sellDescription').value.trim();
-
-            const finalImage = uploadedImageBase64 || CATEGORY_FALLBACK_IMAGES[category] || CATEGORY_FALLBACK_IMAGES['Lainnya'];
-
-            const newProduct = {
-                id: 'brk-' + Date.now(),
-                title,
-                category,
-                price,
-                condition,
-                location,
-                seller,
-                postedAt: 'Baru saja',
-                timestamp: Date.now(),
-                image: finalImage,
-                description
-            };
-
-            // Add to top of products array
-            products.unshift(newProduct);
-            saveProductsToLocalStorage();
-
-            // Reset category filter to Semua so user immediately sees their new listing
-            activeCategory = 'Semua';
-            renderCategories();
-            renderProducts();
-
-            closeModal('sellModal');
-            showToast(`Iklan "${title}" berhasil ditayangkan di Barkas!`, 'success');
-
-            // Smooth scroll to catalog
-            document.getElementById('katalog-section').scrollIntoView({ behavior: 'smooth' });
+        // 13. SAFETY GUIDE & REPORT AD MODALS
+        function openSafetyModal(defaultTab = 'pembeli') {
+            switchSafetyTab(defaultTab);
+            openModal('safetyModal');
         }
 
-        // 13. MODAL & TOAST UTILITIES
+        function switchSafetyTab(tab) {
+            const tabs = ['pembeli', 'penjual', 'rekber'];
+            tabs.forEach(t => {
+                const btn = document.getElementById('safetyTab' + t.charAt(0).toUpperCase() + t.slice(1));
+                const pane = document.getElementById('safetyPane' + t.charAt(0).toUpperCase() + t.slice(1));
+                if (t === tab) {
+                    btn.className = 'py-2.5 px-3 rounded-xl font-display font-bold text-xs sm:text-sm transition-all cursor-pointer bg-[#FF8500] text-white shadow-sm';
+                    pane.classList.remove('hidden');
+                } else {
+                    btn.className = 'py-2.5 px-3 rounded-xl font-display font-bold text-xs sm:text-sm transition-all cursor-pointer bg-white text-[#2F2C2A] border border-[#ADA69C] hover:border-[#FF8500]';
+                    pane.classList.add('hidden');
+                }
+            });
+        }
+
+        function openReportModal() {
+            if (!selectedProduct) return;
+            document.getElementById('reportProductTitle').textContent = `${selectedProduct.title} (${selectedProduct.seller})`;
+            document.getElementById('reportNotes').value = '';
+            document.querySelectorAll('input[name="reportReason"]').forEach(r => r.checked = false);
+            openModal('reportModal');
+        }
+
+        function submitReport(e) {
+            e.preventDefault();
+            if (!selectedProduct) return;
+            const selectedReason = document.querySelector('input[name="reportReason"]:checked');
+            const reasonText = selectedReason ? selectedReason.value : 'Pelanggaran keamanan';
+            closeModal('reportModal');
+            showToast(`Laporan untuk "${selectedProduct.title}" (${reasonText}) berhasil dikirim ke Tim Keamanan Barkas.`, 'success');
+        }
+
+        // 14. MODAL & TOAST UTILITIES
         function openModal(id) {
             const modal = document.getElementById(id);
             modal.classList.remove('hidden');
@@ -1445,7 +1758,7 @@
         }
 
         // Close modal when clicking outside backdrop
-        ['detailModal', 'checkoutModal', 'sellModal', 'wishlistModal'].forEach(id => {
+        ['detailModal', 'checkoutModal', 'sellModal', 'wishlistModal', 'safetyModal', 'reportModal'].forEach(id => {
             const el = document.getElementById(id);
             el.addEventListener('click', (e) => {
                 if (e.target === el) closeModal(id);
